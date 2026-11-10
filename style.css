@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1E293B; /* Deep Navy */
+    color: #F8FAFC;
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden; /* Mencegah munculnya scrollbar karena efek hujan hati */
+    position: relative;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    max-width: 500px;
+    margin: 20px;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(8px); /* Fitur baru: Efek kaca/glassmorphism */
+}
+
+/* Styling untuk foto Layla agar bulat dan memiliki efek cahaya */
+.foto-profil {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%; /* Lingkaran sempurna */
+    object-fit: cover;
+    border: 3px solid #38BDF8; /* Aksen Cyan */
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fitur baru: Efek glow bertambah saat foto disentuh */
+.foto-profil:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.8);
+}
+
+h1 {
+    color: #38BDF8; /* Aksen Cyan */
+    margin-bottom: 10px;
+    font-family: 'Dancing Script', cursive; /* Font latin bersambung */
+    font-size: 2.7em; 
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Fitur baru: Bayangan pada teks */
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #CBD5E1;
+}
+
+.message-box {
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px dashed #EF4444;
+    border-radius: 10px;
+    font-style: normal;
+    min-height: 80px; /* Diperbesar sedikit agar teks tidak terpotong saat ngetik */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7em;
+    font-family: 'Dancing Script', cursive; 
+    color: #F8FAFC;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Tombol dengan warna aksen merah terang */
+button {
+    background-color: #ff2800; 
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 40, 0, 0.3);
+}
+
+/* Fitur baru: Tombol membesar dan glow merona saat disentuh */
+button:hover {
+    background-color: #d12100;
+    box-shadow: 0 0 20px rgba(255, 40, 0, 0.8);
+    transform: translateY(-3px) scale(1.05); 
+}
+
+/* Pengaturan elemen hati yang jatuh */
+.heart {
+    position: fixed;
+    top: -5vh;
+    z-index: 0;
+    pointer-events: none; 
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Fitur baru: Styling untuk Tanda Tangan Footer */
+.footer-text {
+    position: absolute;
+    bottom: 15px;
+    color: rgba(248, 250, 252, 0.5);
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    z-index: 10;
+}
